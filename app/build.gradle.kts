@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.instaclone"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.instaclone"
@@ -13,6 +13,7 @@ android {
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
+
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -66,4 +67,5 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+    implementation ("com.github.bumptech.glide:compose:1.0.0-beta01")
 }

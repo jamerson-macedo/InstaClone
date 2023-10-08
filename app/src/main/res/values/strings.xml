@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">InstaClone</string>
+    <string name="insta_label">Instagram</string>
 </resources>
