@@ -43,7 +43,7 @@ fun storyItem(story: Story) {
                 .align(Alignment.CenterHorizontally)
                 .fillMaxSize()
                 .clip(CircleShape)
-                .border(2.dp, storyColor, CircleShape), contentScale = ContentScale.Crop
+                .border(2.dp,storyColor, CircleShape), contentScale = ContentScale.Crop
         )
         Text(
             text = story.nickname,
