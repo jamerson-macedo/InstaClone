@@ -17,8 +17,6 @@ fun typography(onBackground:Color):Typography{
             fontFamily = FontFamily.Default,
             fontWeight = FontWeight.Normal,
             fontSize = fontSmall,
-            lineHeight = fontXLarge,
-            letterSpacing = 0.5.sp,
             color = onBackground
         ), headlineLarge = TextStyle(
             fontFamily = instaFont,

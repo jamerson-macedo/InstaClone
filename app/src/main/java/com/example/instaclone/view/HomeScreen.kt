@@ -1,9 +1,11 @@
 package com.example.instaclone.view
 
+import android.content.ClipData.Item
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.Divider
@@ -32,14 +34,7 @@ fun HomeScreen() {
         InstaToolbar()
         storyList(story = stories)
         Divider(color = dividerColor, thickness = 0.2.dp)
-        FeedItem(feed = Feed(
-            "jamerson_macedo",
-            "carnauba dos dantas",
-            "https://kinsta.com/pt/wp-content/uploads/sites/3/2020/10/tipos-de-arquivo-de-imagem.png",
-            "https://kinsta.com/pt/wp-content/uploads/sites/3/2020/10/tipos-de-arquivo-de-imagem.png",
-            "ola mundo",
-            "há 2 dias"
-        ))
+        feedList(feed = com.example.instaclone.data.repository.feedList)
 
 
     }
@@ -57,6 +52,22 @@ fun storyList(story: List<Story>) {
 
 
     }
+
+}
+
+@Composable
+fun feedList(feed: List<Feed>) {
+    LazyColumn(modifier = Modifier.padding(top = spacingMedium)) {
+        // funciona como se fosse um adapter
+        // o item do story
+        // item(feed) { _, item ->
+        itemsIndexed(feed) { _,item->
+            FeedItem(feed = item)
+        }
+
+
+    }
+
 
 }
 

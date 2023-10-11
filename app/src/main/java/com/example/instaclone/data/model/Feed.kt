@@ -4,7 +4,7 @@ class Feed(
     val nickname: String,
     val localname: String,
     val useravatar: String,
-    val imageurl: String,
+    val imageUrl: String,
     val description: String,
     val postedAgo: String
 )
