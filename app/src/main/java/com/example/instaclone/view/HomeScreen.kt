@@ -21,6 +21,7 @@ import com.example.instaclone.data.repository.stories
 import com.example.instaclone.ui.theme.dividerColor
 import com.example.instaclone.ui.theme.spacingMedium
 import com.example.instaclone.data.repository.feedList
+import com.example.instaclone.ui.theme.InstaCloneTheme
 
 @Composable
 fun HomeScreen() {
@@ -33,7 +34,7 @@ fun HomeScreen() {
     ) {
         item { InstaToolbar() }
         item { storyList(story = stories) }
-        item { Divider(color = dividerColor, thickness = 0.2.dp) }
+        item { Divider(color = MaterialTheme.colorScheme.onSurface, thickness = 0.2.dp) }
         feedlist(feed = feedList)
 
     }
@@ -56,16 +57,25 @@ fun storyList(story: List<Story>) {
 
 fun LazyListScope.feedlist(feed: List<Feed>) {
 
-        itemsIndexed(feed) { _, item ->
-            FeedItem(feed = item)
-        }
-
-
+    itemsIndexed(feed) { _, item ->
+        FeedItem(feed = item)
     }
+
+
+}
 
 
 @Preview(showBackground = true)
 @Composable
 fun HomeScreenpreview() {
     HomeScreen()
+}
+
+@Preview(showBackground = true)
+@Composable
+fun HomeScreenpreviewDark() {
+    InstaCloneTheme(darkTheme = true) {
+        HomeScreen()
+    }
+
 }

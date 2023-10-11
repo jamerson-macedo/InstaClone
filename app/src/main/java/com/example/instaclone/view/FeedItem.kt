@@ -21,7 +21,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
@@ -35,6 +37,8 @@ import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import com.example.instaclone.R
 import com.example.instaclone.data.model.Feed
+import com.example.instaclone.data.repository.feedList
+import com.example.instaclone.ui.theme.InstaCloneTheme
 import com.example.instaclone.ui.theme.gray
 import com.example.instaclone.ui.theme.spacingLarge
 import com.example.instaclone.ui.theme.spacingMedium
@@ -49,6 +53,7 @@ fun FeedItem(feed: Feed) {
     val messageIcon = R.drawable.ic_message
     val comentIcon = R.drawable.ic_comment
     val bookmarkIcon = R.drawable.ic_bookmark
+    val iconscolor = MaterialTheme.colorScheme.onBackground
 
     Column(modifier = Modifier.background(MaterialTheme.colorScheme.background)) {
         Row(
@@ -122,7 +127,8 @@ fun FeedItem(feed: Feed) {
                     .size(40.dp)
                     .padding(end = spacingLarge)
                     .weight(1f)
-                    .wrapContentWidth(Alignment.End)
+                    .wrapContentWidth(Alignment.End),
+                colorFilter = ColorFilter.tint(iconscolor)
             )
 
         }
@@ -170,7 +176,8 @@ fun feedIcon(@DrawableRes icon: Int) {
         contentDescription = "",
         Modifier
             .size(40.dp)
-            .padding(end = spacingLarge)
+            .padding(end = spacingLarge),
+        colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onBackground)
     )
 
 }
@@ -180,13 +187,16 @@ fun feedIcon(@DrawableRes icon: Int) {
 fun feedpreview() {
 
     FeedItem(
-        feed = Feed(
-            "jamerson_macedo",
-            "carnauba dos dantas",
-            "",
-            "",
-            "mweifmwekfm ewfwefwefwefolamundongrejengjerngjkerngkejrngkejrngjkerngjkergnjkerngjerkgnerjkng",
-            "há 2 dias"
-        )
-    )
+        feed = feedList[0])
+}
+@Preview(showBackground = true)
+@Composable
+fun feedpreviewDark() {
+    InstaCloneTheme(darkTheme = true) {
+        FeedItem(
+            feed = feedList[0])
+
+
+    }
+
 }
