@@ -32,9 +32,15 @@ fun HomeScreen() {
         modifier = Modifier
             .background(MaterialTheme.colorScheme.background)
     ) {
-        item { InstaToolbar() }
-        item { storyList(story = stories) }
-        item { Divider(color = MaterialTheme.colorScheme.onSurface, thickness = 0.2.dp) }
+        item {
+            InstaToolbar()
+        }
+        item {
+            storyList(story = stories)
+        }
+        item {
+            Divider(color = MaterialTheme.colorScheme.onSurface, thickness = 0.2.dp)
+        }
         feedlist(feed = feedList)
 
     }
@@ -60,8 +66,6 @@ fun LazyListScope.feedlist(feed: List<Feed>) {
     itemsIndexed(feed) { _, item ->
         FeedItem(feed = item)
     }
-
-
 }
 
 
