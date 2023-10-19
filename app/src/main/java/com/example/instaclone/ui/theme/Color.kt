@@ -13,3 +13,6 @@ val storyColor=Color(0xFFFF6347)
 val dividerColor=Color(0xFFC9C9C9)
 val dividerColordark=Color(0xFF343434)
 val gray=Color(0XFF808080)
+
+val lightBlue = Color(0xffd8e6ff)
+val blue = Color(0xff76a9ff)
