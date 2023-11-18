@@ -1,4 +1,4 @@
-package com.example.instaclone.view
+package com.example.instaclone.view.profile
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -29,7 +29,7 @@ import com.example.instaclone.ui.theme.storyColor
 
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
-fun storyItem(story: Story) {
+fun destaqueItem(story: Story) {
     Column(
         modifier = Modifier
             .padding(spacingSmall)
@@ -45,16 +45,6 @@ fun storyItem(story: Story) {
                 .clip(CircleShape)
                 .border(2.dp,storyColor, CircleShape), contentScale = ContentScale.Crop
         )
-        Text(
-            text = story.nickname,
-            modifier =
-            Modifier
-                .width(72.dp)
-                .wrapContentHeight(),
-            maxLines = 1,// deixando os ....
-            overflow = TextOverflow.Ellipsis,
-            textAlign = TextAlign.Center
-        )
     }
 
 
@@ -64,6 +54,6 @@ fun storyItem(story: Story) {
 @Composable
 fun preview() {
 
-    storyItem(stories[0])
+    destaqueItem(stories[0])
 
 }

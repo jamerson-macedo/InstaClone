@@ -1,4 +1,4 @@
-package com.example.instaclone.view
+package com.example.instaclone.view.home
 
 
 import androidx.compose.foundation.background
@@ -18,7 +18,6 @@ import androidx.compose.ui.unit.dp
 import com.example.instaclone.data.model.Feed
 import com.example.instaclone.data.model.Story
 import com.example.instaclone.data.repository.stories
-import com.example.instaclone.ui.theme.dividerColor
 import com.example.instaclone.ui.theme.spacingMedium
 import com.example.instaclone.data.repository.feedList
 import com.example.instaclone.ui.theme.InstaCloneTheme
